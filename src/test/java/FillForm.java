@@ -1,11 +1,8 @@
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byId;
-import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -31,9 +28,40 @@ public class FillForm {
         $("#userNumber").setValue("5553435777");
 
         $("#dateOfBirthInput").click();
+        $(".react-datepicker__month-select").selectOptionByValue("11");
+        $(".react-datepicker__year-select").selectOptionByValue("1993");
+        $("[aria-label=\"Choose Monday, December 20th, 1993\"]").click();
 
+        $("#subjectsInput").setValue("Maths");
+        $("#subjectsInput").pressEnter();
 
+        $("[for='hobbies-checkbox-2']").click();
 
-        System.out.println("debug");
+        $("#uploadPicture").uploadFromClasspath("dog.png");
+
+        $("#currentAddress").setValue("SPb");
+
+        $("#react-select-3-input").setValue("NCR");
+        $("#react-select-3-input").pressEnter();
+
+        $("#react-select-4-input").setValue("Noida");
+        $("#react-select-4-input").pressEnter();
+
+        $("#submit").click();
+
+        $(".modal-content").shouldHave(text("Kate"),
+                text("Ziateva"),
+                text("kate@email.com"),
+                text("Female"),
+                text("5553435777"),
+                text("20 December,1993"),
+                text("Maths"),
+                text("Reading"),
+                text("dog.png"),
+                text("SPb"),
+                text("NCR"),
+                text("Noida"));
+
+        /* System.out.println("debug"); */
     }
 }

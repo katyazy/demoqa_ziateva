@@ -1,4 +1,4 @@
-/* мопед не мой, интересно стало как работает
+/* мопед не мой, интересно стало как работает */
 
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
@@ -36,7 +36,7 @@ public class FormTestsWithFaker {
                 monthofbirth = dateofbirth.toInstant().atZone(ZoneId.systemDefault()).getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH),
                 yearofbirth = String.valueOf(dateofbirth.toInstant().atZone(ZoneId.systemDefault()).getYear()),
                 dayofbirth = String.valueOf(dateofbirth.toInstant().atZone(ZoneId.systemDefault()).getDayOfMonth()),
-                picture = "cat.png",
+                picture = "dog.png",
                 address = faker.address().fullAddress(),
                 state = "NCR",
                 city = "Noida";

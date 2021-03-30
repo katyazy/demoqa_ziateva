@@ -1,4 +1,4 @@
-/* мопед не мой, интересно стало как работает */
+/* homework 2_2 */
 
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class FormTestsWithFaker {
+public class FormFillTestsWithFaker {
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;

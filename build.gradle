@@ -18,7 +18,7 @@ defaultTasks 'help'
 
 ext {
     allureVersion = "2.13.8"
-    selenideVersion = "5.18.0"
+    selenideVersion = "5.20.1"
     junitVersion = "5.7.0"
 }
 

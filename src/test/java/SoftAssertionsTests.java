@@ -21,18 +21,11 @@ public class SoftAssertionsTests {
     @Test
     void checkExamplesJUnit5() {
         open("https://github.com/");
-
         $("[name=q]").setValue("Selenide").pressEnter();
-
         $("ul.repo-list li a").click();
-
         $("h1").shouldHave(text("selenide / selenide"));
-
         $("[data-tab-item='i4wiki-tab']").click();
-
-        $(byText("Soft assertions")).shouldBe(visible).click();
-
+        $(byText("Soft assertions")).click();
         $("#wiki-content").shouldHave(text("Using JUnit5 extend test class:"));
-
     }
 }
